@@ -1,0 +1,16 @@
+.servicesContainer {
+  display: flex;
+  gap: 1%;
+  width: 100%;
+  justify-content: center;
+}
+.parentServicesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.text {
+  margin: 2rem 00;
+  font-size: 1.2rem;
+}

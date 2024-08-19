@@ -1,0 +1,31 @@
+.categoriesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 50px;
+}
+.individualIconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f2eefd;
+  height: 120px;
+  width: 160px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.icon {
+  color: var(--category-color);
+  width: 50px;
+  height: 50px;
+}
+.iconName {
+  text-transform: capitalize;
+  color: #8056eb;
+  font-size: 20px;
+  font-weight: 500;
+}

@@ -1,0 +1,30 @@
+.inputFormContainer {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}
+.input {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  font-size: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.199);
+  border-radius: 25px;
+  &::placeholder {
+    font-size: 20px;
+  }
+}
+.buttonContainer {
+  border: none;
+  cursor: pointer;
+  .imgInButton {
+    border-radius: 25px;
+  }
+}
+.searchLogo {
+  background: #8056eb;
+  padding: 15px;
+  border-radius: 27px;
+  font-size: 25px;
+  color: white;
+}
