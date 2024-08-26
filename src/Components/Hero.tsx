@@ -1,5 +1,3 @@
-import Categories from "./Categories";
-
 import styles from "../Styles/Hero.module.scss";
 import InputTemplate from "./InputTemplate";
 const Hero = () => {
@@ -15,8 +13,6 @@ const Hero = () => {
         </p>
         <InputTemplate placeholder="Search" />
       </div>
-
-      <Categories />
     </div>
   );
 };

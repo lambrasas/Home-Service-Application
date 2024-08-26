@@ -1,31 +1,42 @@
 import styles from "../Styles/Categories.module.scss";
-import { Link } from "react-router-dom";
-import Services from "../Components/Services";
-import { serviceData } from "../Components/serviceData";
 import { useLocation } from "react-router-dom";
-import { categories } from "../Components/categoryData";
-const CategoryPage = () => {
+import ServicesList from "../Components/ServicesList";
+import { Category } from "../types/categoryType";
+import { Service } from "../types/serviceType";
+import Categories from "../Components/Categories";
+
+interface CategoryPageProps {
+  categories: Category[];
+  services: Service[];
+}
+
+const CategoryPage: React.FC<CategoryPageProps> = ({
+  categories,
+  services,
+}) => {
   const location = useLocation().pathname;
   const currentCategory = location.split("/")[2];
+  const filteredServices = services.filter(
+    (service) =>
+      service.category.toLowerCase() === currentCategory.toLowerCase()
+  );
   return (
-    <div className={styles.categoriesContainer}>
-      {categories.map((category) => (
-        <Link
-          to={`/search/${category.name}`}
-          key={category.name}
-          className={styles.individualIconContainer}
-          style={{ "--category-color": category.color } as React.CSSProperties}
-        >
-          <category.icon className={styles.icon} />
-          <span className={styles.iconName}>{category.name}</span>
-        </Link>
-      ))}
+    <div className={styles.categoriesServicesContainer}>
+      <div className={styles.categoriesAndText}>
+        <h2>Categories</h2>
+        <Categories
+          categories={categories}
+          currentCategory={currentCategory}
+          layout="categories"
+        />
+      </div>
 
-      <Services
-        serviceData={serviceData.filter(
-          (service) => service.category == currentCategory
-        )}
-      />
+      <div className={styles.servicesContainer}>
+        <h2>
+          {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
+        </h2>
+        <ServicesList layout="categories" serviceData={filteredServices} />
+      </div>
     </div>
   );
 };

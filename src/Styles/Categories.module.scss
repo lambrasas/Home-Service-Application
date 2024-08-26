@@ -1,10 +1,19 @@
 .categoriesContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 20px;
   width: 100%;
-  margin-top: 50px;
+}
+.categoriesAndText {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.categoriesServicesContainer {
+  display: flex;
+  gap: 50px;
+  padding: 0 50px;
 }
 .individualIconContainer {
   display: flex;
@@ -28,4 +37,42 @@
   color: #8056eb;
   font-size: 20px;
   font-weight: 500;
+}
+.highlighted {
+  border: 2px solid #beaaf5 !important;
+  color: red;
+  background-color: #f2eefd !important;
+  color: #8056eb;
+}
+.categoriesInPage {
+  display: flex;
+  flex-direction: column;
+}
+.categoriesLayout {
+  flex-direction: column;
+  width: auto;
+  justify-content: flex-start;
+  color: red;
+}
+.mainLayout {
+  justify-content: center;
+}
+.categoriesPageCard {
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 1rem;
+  border: 2px #e6e6e6 solid;
+  padding: 1rem;
+  height: auto;
+  background-color: white;
+  text-decoration: none;
+}
+.servicesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.mainCard {
+  text-decoration: none;
 }

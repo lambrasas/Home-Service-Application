@@ -11,16 +11,19 @@ export interface IService extends Document {
   address: string;
 }
 
-const serviceSchema = new Schema<IService>({
-  picture: { type: String, required: true },
-  category: { type: String, required: true },
-  serviceName: { type: String, required: true },
-  serviceProvider: {
-    name: { type: String, required: true },
-    surname: { type: String, required: true },
+const serviceSchema = new Schema<IService>(
+  {
+    picture: { type: String, required: true },
+    category: { type: String, required: true },
+    serviceName: { type: String, required: true },
+    serviceProvider: {
+      name: { type: String, required: true },
+      surname: { type: String, required: true },
+    },
+    address: { type: String, required: true },
   },
-  address: { type: String, required: true },
-});
+  { collection: "Services" }
+);
 
 const ServiceModel = model<IService>("Service", serviceSchema);
 

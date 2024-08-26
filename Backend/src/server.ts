@@ -1,12 +1,13 @@
-import express, { Application, Request, Response, response } from "express";
+import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import connectDB from "./config/db";
-
+import router from "./routes/client";
 const app: Application = express();
 connectDB();
 
 app.use(cors());
 app.use(express.json());
+app.use("/client", router);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("API is working...");
