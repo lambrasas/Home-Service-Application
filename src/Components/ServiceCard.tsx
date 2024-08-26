@@ -1,4 +1,4 @@
-import { Service } from "./serviceData";
+import { Service } from "../types/serviceType";
 import styles from "../Styles/ServiceCard.module.scss";
 interface ServiceCardProps {
   service: Service;
