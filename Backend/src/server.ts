@@ -1,15 +1,23 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import connectDB from "./config/db";
-import router from "./routes/client";
+import clientRouter from "./routes/client";
+import authRouter from "./routes/auth";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const app: Application = express();
+
 connectDB();
 
 app.use(cors());
 app.use(express.json());
-app.use("/client", router);
 
-app.get("/", (req: Request, res: Response) => {
+app.use("/client", clientRouter);
+app.use("/auth", authRouter);
+
+app.get("/", (req, res) => {
   res.send("API is working...");
 });
 
